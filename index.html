@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDR风格：ARP技术标准操作程序</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --jdr-blue: #003366;
+            --jdr-accent: #8e1b1b;
+            --jdr-bg: #fdfdfb;
+            --jdr-card-bg: #ffffff;
+            --jdr-text: #1a1a1a;
+            --jdr-border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--jdr-bg);
+            color: var(--jdr-text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .serif {
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .header-rule {
+            border-top: 2.5px solid var(--jdr-blue);
+            border-bottom: 0.5px solid var(--jdr-blue);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 2.5rem 0 1.25rem 0;
+        }
+
+        .section-number {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            color: var(--jdr-blue);
+            font-weight: 600;
+            margin-right: 12px;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--jdr-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .sop-card {
+            background: var(--jdr-card-bg);
+            border: 1px solid var(--jdr-border);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .step-box {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #eee;
+            margin-bottom: 24px;
+        }
+
+        .step-box::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--jdr-blue);
+            border-radius: 50%;
+        }
+
+        .emphasis-blue {
+            color: var(--jdr-blue);
+            font-weight: 600;
+        }
+
+        .emphasis-accent {
+            color: var(--jdr-accent);
+            font-weight: 600;
+        }
+
+        .risk-table {
+            width: 100%;
+            font-size: 0.85rem;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .risk-table th {
+            background: #f8f9fa;
+            color: var(--jdr-blue);
+            text-align: left;
+            padding: 10px;
+            border-bottom: 2px solid var(--jdr-blue);
+        }
+
+        .risk-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 手机端底部导航感 */
+        .footer-info {
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+            padding: 40px 20px;
+        }
+    </style>
+</head>
+<body class="p-0 sm:p-4">
+
+    <!-- 顶部页眉：符合学术期刊版式 -->
+    <header class="bg-white px-6 pt-8 pb-4 sticky top-0 z-10 shadow-sm sm:static">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex justify-between items-end border-b pb-1 mb-4">
+                <span class="serif italic text-sm text-slate-500">Standard Operating Procedure</span>
+                <span class="text-xs font-medium text-slate-400">Ver. 20260208</span>
+            </div>
+            <h1 class="serif text-2xl font-bold text-slate-900 leading-snug mb-4">
+                拔牙同期牙槽嵴保存技术 (ARP) 标准操作程序
+            </h1>
+            <div class="header-rule py-3 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-slate-600">
+                <span><strong class="text-slate-900">负责人：</strong>李雯 (主治医师)</span>
+                <span><strong class="text-slate-900">单位：</strong>普洱市人民医院口腔医学中心</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-4 pb-12">
+
+        <!-- 阶段一：术前评估 -->
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <span class="section-title">术前评估与准备阶段</span>
+        </div>
+        
+        <section class="sop-card">
+            <div class="space-y-4">
+                <div class="flex gap-4">
+                    <div class="text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18h14V3H5z"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">影像学检查 (Radiology)</h4>
+                        <p class="text-sm text-slate-600 mt-1">
+                            必须拍摄 <span class="emphasis-blue">CBCT</span>，精确测量牙槽窝骨壁（特别是颊侧骨板）的厚度、高度及骨缺损情况。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 border-t pt-4">
+                    <div class="text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 10-3 3 3 3"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm">适应症筛选 (Indications)</h4>
+                        <p class="text-sm text-slate-600 mt-1">
+                            重点：美学区拔牙、后期拟行种植修复、或骨板菲薄（<span class="emphasis-accent">&lt;1mm</span>）者。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-3 rounded text-xs space-y-2 italic text-slate-500">
+                    <p>• 签署《新技术知情同意书》，履行告知义务。</p>
+                    <p>• 术前全口洁治，控制牙龈炎症。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 阶段二：手术操作 -->
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <span class="section-title">手术操作阶段 (CORE)</span>
+        </div>
+
+        <section class="sop-card">
+            <div class="step-box">
+                <h4 class="font-bold text-sm mb-1 uppercase">Step 1. 微创拔牙</h4>
+                <p class="text-sm text-slate-600">
+                    使用微创拔牙刀或超声骨刀切断牙周韧带。<span class="emphasis-accent">严禁大幅度摇动</span>，保护牙槽窝完整性。
+                </p>
+            </div>
+
+            <div class="step-box">
+                <h4 class="font-bold text-sm mb-1 uppercase">Step 2. 位点处理</h4>
+                <p class="text-sm text-slate-600">
+                    彻底刮除炎性肉芽组织，使用大量 <span class="emphasis-blue">生理盐水</span> 反复冲洗。
+                </p>
+            </div>
+
+            <div class="step-box">
+                <h4 class="font-bold text-sm mb-1 uppercase">Step 3. 材料植入</h4>
+                <p class="text-sm text-slate-600 mb-2">
+                    <span class="emphasis-blue">支架填充：</span>填入骨替代材料（如Bio-Oss），自然充填，不可过度挤压。
+                </p>
+                <p class="text-sm text-slate-600">
+                    <span class="emphasis-blue">覆盖屏障：</span>覆盖生物膜（如胶原膜），边缘超出骨缺损 <span class="emphasis-accent">2-3mm</span>。
+                </p>
+            </div>
+
+            <div class="step-box" style="margin-bottom: 0;">
+                <h4 class="font-bold text-sm mb-1 uppercase">Step 4. 创口缝合</h4>
+                <p class="text-sm text-slate-600">
+                    采用减张或“8”字缝合。若无法关闭，可用 <span class="emphasis-blue">胶原基质</span> 进行开放式愈合处理。
+                </p>
+            </div>
+        </section>
+
+        <!-- 阶段三：术后管理 -->
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <span class="section-title">术后管理与随访</span>
+        </div>
+
+        <section class="sop-card">
+            <div class="grid grid-cols-1 gap-4">
+                <div class="border-b pb-3">
+                    <h5 class="text-xs font-bold text-slate-400 mb-2 uppercase">医嘱与用药</h5>
+                    <p class="text-sm">术后24h冷敷。常规应用阿莫西林及0.12%氯己定漱口液（7-10天）。</p>
+                </div>
+                <div>
+                    <h5 class="text-xs font-bold text-slate-400 mb-2 uppercase">复查周期</h5>
+                    <div class="flex justify-between items-center text-sm">
+                        <div class="text-center px-2 py-1 bg-slate-100 rounded">1-2周: 拆线</div>
+                        <div class="text-slate-300">→</div>
+                        <div class="text-center px-2 py-1 bg-slate-100 rounded">3个月: CBCT评估</div>
+                        <div class="text-slate-300">→</div>
+                        <div class="text-center px-2 py-1 bg-slate-100 rounded">6个月: 种植</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 风险及预案 -->
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <span class="section-title">风险监测与应急预案</span>
+        </div>
+
+        <section class="sop-card overflow-hidden">
+            <table class="risk-table">
+                <thead>
+                    <tr>
+                        <th width="35%">风险事件</th>
+                        <th>处置措施</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-medium">膜暴露 (Exposure)</td>
+                        <td class="text-slate-600">加强局部消毒，保持清洁，观察自然降解。</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium">局部感染 (Infection)</td>
+                        <td class="text-slate-600">及时清创并取出骨粉，记录为医疗意外并上报医务部。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 底部版权信息 -->
+        <footer class="footer-info">
+            <div class="w-12 h-0.5 bg-slate-200 mx-auto mb-6"></div>
+            <p class="serif italic mb-1">Clinical Protocol Series - Oral Medicine Center</p>
+            <p>© 2026 Pu'er People's Hospital. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- 移动端优化悬浮提示 -->
+    <div class="fixed bottom-4 right-4 sm:hidden">
+        <button class="bg-blue-900 text-white p-3 rounded-full shadow-lg opacity-80" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+    </div>
+
+</body>
+</html>
